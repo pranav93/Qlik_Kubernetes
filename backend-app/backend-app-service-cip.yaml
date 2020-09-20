@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: qlik-backend-app
+  labels:
+    app: qlik-backend-app
+spec:
+  type: ClusterIP
+  selector:
+    app: qlik-backend-app
+  ports:
+    - targetPort: 3000
+      port: 8080

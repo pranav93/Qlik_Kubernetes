@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: qlik-frontend-app
+  labels:
+    app: qlik-frontend-app
+spec:
+  type: ClusterIP
+  selector:
+    app: qlik-frontend-app
+  ports:
+    - targetPort: 80
+      port: 8081

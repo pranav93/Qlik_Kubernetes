@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qlik-backend-app
+  labels:
+    app: qlik-backend-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: qlik-backend-app
+  template:
+    metadata:
+      labels:
+        app: qlik-backend-app
+    spec:
+      containers:
+        - name: qlik-backend-app
+          image: pranav93/qlik_backend:nocors
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 3000
+          envFrom:
+            - secretRef:
+                name: backend-app-secret

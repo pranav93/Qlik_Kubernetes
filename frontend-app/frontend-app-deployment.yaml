@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qlik-frontend-app
+  labels:
+    app: qlik-frontend-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: qlik-frontend-app
+  template:
+    metadata:
+      labels:
+        app: qlik-frontend-app
+    spec:
+      containers:
+        - name: qlik-frontend-app
+          image: pranav93/qlik_frontend:v2
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 80
+          envFrom:
+            - secretRef:
+                name: frontend-app-secret

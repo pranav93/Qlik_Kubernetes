@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: qlik-postgres
+  labels:
+    app: qlik-postgres
+spec:
+  type: ClusterIP
+  ports:
+    - port: 5432
+      targetPort: 5432
+  selector:
+    app: qlik-postgres
+    tier: postgres
