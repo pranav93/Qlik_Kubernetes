@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: qlik-backend-app
-          image: pranav93/qlik_backend:nocors
+          image: pranav93/qlik_backend:v2
           imagePullPolicy: Always
           ports:
             - name: http
