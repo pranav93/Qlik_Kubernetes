@@ -1,20 +1,22 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-myservicea
-  annotations:
-    # use the shared ingress-nginx
-    kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-  - host: unbelievable_host.com
-    http:
+  - http:
       paths:
-      - path: /
-        backend:
-          serviceName: qlik-frontend-app
-          servicePort: 8081
       - path: /api/
+        pathType: Prefix
         backend:
-          serviceName: qlik-backend-app
-          servicePort: 8080
+          service:
+            name: qlik-backend-app
+            port:
+              number: 8080
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: qlik-frontend-app
+            port:
+              number: 8081
