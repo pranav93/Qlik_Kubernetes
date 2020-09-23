@@ -50,3 +50,5 @@ kubectl get ing ingress-service
 
 That will output the ip address.
 In case you are using `minikube`, just open that ip in browser, and site will be served
+
+![architecture](architecture.jpg)
