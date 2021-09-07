@@ -52,3 +52,9 @@ That will output the ip address.
 In case you are using `minikube`, just open that ip in browser, and site will be served
 
 ![architecture](architecture.jpg)
+
+## API code
+[https://github.com/pranav93/Qlik_Assignment](https://github.com/pranav93/Qlik_Assignment)
+
+## Frontend code
+[https://github.com/pranav93/Qlik_Frontend](https://github.com/pranav93/Qlik_Frontend)
